@@ -13,8 +13,8 @@ int echo = 3;
 float duration = 0;
 float distance = 0;
 float realDistance = 0;
-int steps_per_try = 300;
-int steps_per_creep = 25;
+int steps_per_try = 500;
+int steps_per_creep = 100;
 //line sensor
 int line_sensor_left=5;
 int line_state_left=0;
@@ -155,7 +155,8 @@ void turnLeft(int x) {
 void creepRight(int x) {
   // set the speed at 15 rpm:
   
-  leftStepper.setSpeed(15);
+  leftStepper.setSpeed(12);
+  rightStepper.setSpeed(12);
   
   Serial.println("creepRight()");
   for (int s = 0; s < x; s++) {
@@ -168,8 +169,8 @@ void creepRight(int x) {
 
 void creepLeft(int x) {
   // set the speed at 15 rpm:
-  rightStepper.setSpeed(15);
-  
+  leftStepper.setSpeed(12);
+  rightStepper.setSpeed(12);
   
   Serial.println("creepLeft()");
   for (int s = 0; s < x; s++) {
@@ -183,8 +184,8 @@ void creepLeft(int x) {
 
 void turnRight(int x) {
   // set the speed at 15 rpm:
-  rightStepper.setSpeed(15);
-  leftStepper.setSpeed(15);
+  rightStepper.setSpeed(12);
+  leftStepper.setSpeed(12);
   
   Serial.println("turnRight()");
   for (int s = 0; s < x; s++) {
